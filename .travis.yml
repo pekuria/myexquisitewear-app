@@ -10,19 +10,19 @@ script:
   - ng lint
   - npm run test-headless
   - ng build --prod --base-href https://pekuria.github.io/myexquisitewear-app/
-deploy:
-  provider: pages
-  cleanup: false
-  github_token: $GH_TOKEN
-  local_dir: dist/
-  on:
-    branch: master
-#jobs:
-#  include:
-#  - stage: release
-#    node_js: lts/*
-#    deploy:
-#      provider: script
-#      skip_cleanup: true
-#      script:
-#      - npx semantic-release
+#deploy:
+#  provider: pages
+#  cleanup: false
+#  github_token: $GH_TOKEN
+#  local_dir: dist/
+#  on:
+#    branch: master
+jobs:
+  include:
+  - stage: release
+    node_js: lts/*
+    deploy:
+      provider: script
+      skip_cleanup: true
+      script:
+      - npx semantic-release
