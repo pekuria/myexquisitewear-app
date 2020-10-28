@@ -1,28 +1,18 @@
 language: node_js
 node_js:
 - 12
-branches:
-  only:
-    - master
 before_script:
   - npm install -g @angular/cli
 script:
   - ng lint
   - npm run test-headless
   - ng build --prod --base-href https://pekuria.github.io/myexquisitewear-app/
-#deploy:
-#  provider: pages
-#  cleanup: false
-#  github_token: $GH_TOKEN
-#  local_dir: dist/
-#  on:
-#    branch: master
 jobs:
   include:
   - stage: release
     node_js: lts/*
     deploy:
       provider: script
-      skip_cleanup: true
+      cleanup: true
       script:
       - npx semantic-release
