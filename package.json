@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "commit": "git-cz",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "husky": {
       "hooks": {
         "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
