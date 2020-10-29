@@ -7,7 +7,7 @@ before_script:
   - npm install -g @angular/cli
 jobs:
   include:
-    - stage: run-tests
+    - stage: test
       script:
         - ng lint
         - npm run test-headless
