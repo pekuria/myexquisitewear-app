@@ -7,10 +7,9 @@ before_script:
   - npm install -g @angular/cli
 jobs:
   include:
-    - stage: test
+    - stage: lint-n-build
       script:
         - ng lint
-        - npm run test-headless
         - ng build --prod --base-href https://pekuria.github.io/myexquisitewear-app/
     - stage: push-to-aws
       if: branch = master
