@@ -76,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "myexquisitewear:build"
+            "buildTarget": "myexquisitewear:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "myexquisitewear:build:production"
+              "buildTarget": "myexquisitewear:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "myexquisitewear:build"
+            "buildTarget": "myexquisitewear:build"
           }
         },
         "test": {
